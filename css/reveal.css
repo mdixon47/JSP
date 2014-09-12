@@ -220,6 +220,14 @@ body {
  * DEFAULT ELEMENT STYLES
  *********************************************/
 
+/* No dot in case-sensitivity */
+.no_dot li{ 
+	font-size: 60px;
+	line-height: 60px;   
+	list-style-type: none;
+	text-align: center;
+}
+
 /* Fixes issue in Chrome where italic fonts did not appear when printing to PDF */
 .reveal:after {
   content: '';
@@ -309,8 +317,7 @@ body {
 	.reveal blockquote p:first-child,
 	.reveal blockquote p:last-child {
 		display: inline-block;
-	}
-
+rndcv: 9asaq 4em 9c; aZzsA
 .reveal q {
 	font-style: italic;
 }

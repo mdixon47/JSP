@@ -71,8 +71,8 @@
 				</section>
 				
 				<section>
-					<section>
-						<h2>Extending JavaScript</h2>
+					
+					<h2>Extending JavaScript</h2>
 					<p>
 						Client-side JavaScript extends the core language by supplying objects to control a browser (Navigator or another web browser) and its Document Object Model (DOM). 
 					</p>
@@ -80,151 +80,221 @@
 						Server-side JavaScript extends the core language by supplying objects relevant to running JavaScript on a server. 
 					</p>
 					<p>-Mozilla Developer Network</p>
-					</section>
+					
 				</section>
 
 				
 
 				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
+					<h2>Script Tag placement head element example</h2>
+					<pre><code data-trim contenteditable>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;meta charset=&quot;UTF-8&quot; /&gt;
+	&lt;title&gt;Document&lt;/title&gt;
+	&lt;script src=&quot;text/javascript&quot; src=&quot;example1.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;text/javascript&quot; src=&quot;example2.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	 &lt;!-- content here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+					</code></pre>
+					<p>Professional JavaScript for web developers page 16</p>
 				</section>
 
 				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
+				<h2>Script Tag placement at the end of the body tag example</h2>
+				<pre><code data-trim contenteditable>
+
+					&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;meta charset=&quot;UTF-8&quot;/&gt;
+	&lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;!-- content here --&gt;
+	&lt;script src=&quot;text/javascript&quot; src=&quot;example1.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;text/javascript&quot; src=&quot;example1.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+					</code></pre>
+					<p>Professional JavaScript for web developers page 16</p>
 				</section>
 
 				<section>
-					<h2>Marvelous Unordered List</h2>
+					<h2>The Noscript Element</h2>
+					<p>This element is used when browsers the does not support JavaScript. Any content inside contained in the noscript element will be displayed in the following circumstances:</p>
 					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
+						<li>The browser does not support JS Scripting</li>
+						<li>The browser's scripting support has been turned off</li>
 					</ul>
+					<pre><code data-trim contenteditable>
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;meta charset=&quot;UTF-8&quot; /&gt;
+	&lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+	&lt;body&gt;
+		&lt;noscript&gt;
+		&lt;p&gt; This page requires a JavaScript-enabled browser. &lt;/p&gt;
+		&lt;/noscript&gt;
+
+	&lt;/body&gt;
+&lt;/html&gt;
+					</code></pre>
+			<p>Professional JavaScript for web developers page 22</p>
+				</section>
+
+				<section id="fragments">
+						<h2>Language Basics</h2>
+						<ul>
+							<li class="fragment">Syntax</li>
+							<li class="fragment">Keywords and Reserved Keywords</li>
+							<li class="fragment">Variables</li>
+							<li class="fragment">Data Types</li>
+							<li class="fragment">Operators</li>
+							<li class="fragment">Statements</li>
+							<li class="fragment">Functions</li>
+							<li class="fragment">Arrays</li>
+						</ul>
+
+						<aside class="notes">
+							This slide has fragments which are also stepped through in the notes window.
+						</aside>
+					</section>
+				<section>
+					<h2>Syntax</h2>
+					<ul>
+							<li class="fragment">Case-sensitvity</li>
+							<li class="fragment">Identifiers</li>
+							<li class="fragment">Comments</li>
+							<li class="fragment">Strict Mode</li>
+							<li class="fragment">Statements</li>						
+					</ul>
+				
 				</section>
 
 				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?#/themes">Default</a> -
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> <br>
-						<a href="?theme=moon#/themes">Moon</a> -
-						<a href="?theme=solarized#/themes">Solarized</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
+					<h2>Case-sensitivity</h2>
+						<ul class="no_dot">
+							<li class="fragment">Javascript</li>
+							<li class="fragment">is</li>
+							<li class="fragment">case</li>
+							<li class="fragment">sensitive!</li>	
+						</ul>	
+						&nbsp;
+						<p>including varibles, function names, and operators</p>
 				</section>
 
 				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the background.
-					</p>
+					<h2>Identifiers</h2>
+						<p>Indenifier is the name of a variable, function, property, or function argument</p>
+						<p>Indenifiers may one or more charaters of the following format:</p>
+						<ul>
+							<li>The first charater must ba a letter or an underscore ( _ ), or dollar sigh ($)</li>
+							<li>All other characters may be letters, underscoress, dollar signs, or numbers</li>
+						</ul>
+							
+						<p>JavaScript identifiers use camel case</p>
+
+						<pre><code data-trim contenteditable>
+firstSecond
+myCar
+doSomethingImportant
+						</code></pre>
+
 				</section>
 
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
+				<section>
+						<h2>Comments</h2>
+							<p>JavaScript uses C-style comments for both single-line and block comments</p>
+							<p>A single-line comment begins with two forward-slash charaters</p>
+						<pre><code data-trim contenteditable>
+//single line comment
+						</code></pre>
+							
+						<p>Block comment begins with a forward slash and asterick ( /* )</p>
+
+						<pre><code data-trim contenteditable>
+/*
+* This is a multi-line 
+* comment
+*/
+						</code></pre>
+						<p>Always comment your code..</p>
+
+				</section>
+
+
+				<section>
+					<h2>Strict Mode</h2>
 					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
+						ECMAScript 5 introduced the concept of <em>Strict Mode</em>. To Enable strict mode for an entire script, include the following at the top:
 					</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-					Reveal.addEventListener( 'customevent', function() {
-					console.log( '"customevent" has fired' );
-						} );
+					<pre><code data-trim contenteditable>
+					"use strict";
+					</code></pre>
+					<p>You can also specify just a function to execute in strict mode by including the pragma at the top of the function body:</p>
+					<pre><code data-trim contenteditable>
+
+function doSomthing(){
+	"use strict";
+	//function body
+}
 					</code></pre>
 				</section>
 
 				<section>
-					<section data-background="#007777">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Repeated Image Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-				</section>
-
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Background Transitions</h2>
+					<h2>Statements</h2>
 					<p>
-						Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
+						Statements in JavaScript are terminated by a semicolon.
 					</p>
+					<pre><code data-trim contenteditable>
+var sum = a + b     // valid even without the semicolon  - not recomended
+var diff = a - b;   // valid - preferred
+					</code></pre>
+					<p>Muliple statements can be combined into a code block by using syntax beginning with a left curly brace ( { ) and ending with a right curly brace ( } ).</p>
+					<pre><code data-trim contenteditable>
+if (test){
+  test = false;
+  alert(test);
+}
+					</code></pre>
+
 				</section>
 
-				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-					<h2>Background Transition Override</h2>
+				<section>
+					<h2>Control Statements</h2>
+					<p>Control Statements, such as <code>(if)</code> require code blocks only when execution multiple statements</p>
+					<pre><code data-trim contenteditable>
+if (test)
+  alert(test);   //valid but error-prone and should be avoided
+
+
+if (test) {
+  alert(test);  //preferred
+}
+					</code></pre>
+					<p>Using code blocks for control statements make the intent clear and less chance for errors when changes are made.</p>
+				</section>
+
+				<section>
+					<h2>Keyword and Reserved words</h2>
+					<p> Keyword has special meaning in the JavaScript language and are part of the syntax</p>
+					<p>Reserved words are word that cannot be used as indentifiers (variables, functions, etc.) because that are reserved by the language.</p>
+					<p>For additional information on keyword and reserved word go to Professional JavaScript for web developers page 28</p>
+				</section>
+
+				<section>
+					<h2>Variables</h2>
 					<p>
-						You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
+						
 					</p>
 				</section>
 
@@ -243,20 +313,18 @@
 				<section>
 					<h2>Pretty Code</h2>
 					<pre><code data-trim contenteditable>
-						function linkify( selector ) {
-						  if( supports3DTransforms ) {
+			function linkify( selector ) {
+	if( supports3DTransforms ) {
+		var nodes = document.querySelectorAll( selector );
 
-						    var nodes = document.querySelectorAll( selector );
-
-						    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-						      var node = nodes[i];
-
-						      if( !node.className ) {
-						        node.className += ' roll';
-						      }
-						    }
-						  }
-						}
+	for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+		var node = nodes[i];
+		if( !node.className ) {
+			node.className +='roll';
+			}
+		}
+	}
+}
 					</code></pre>
 					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
 				</section>
@@ -270,20 +338,7 @@
 				</section>
 
 				<section>
-					<section id="fragments">
-						<h2>Fragmented Views</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<ol>
-							<li class="fragment"><code>any type</code></li>
-							<li class="fragment"><em>of view</em></li>
-							<li class="fragment"><strong>fragments</strong></li>
-						</ol>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
+					
 					<section>
 						<h2>Fragment Styles</h2>
 						<p>There's a few styles of fragments, like:</p>
