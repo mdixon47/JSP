@@ -14,6 +14,12 @@ module.exports = function(grunt) {
 				' * Copyright (C) 2014 Hakim El Hattab, http://hakim.se\n' +
 				' */'
 		},
+		reload: {
+			port: 9090,
+			proxy: {
+				host: "localhost"
+			}
+		},
 
 		qunit: {
 			files: [ 'test/*.html' ]
@@ -97,6 +103,7 @@ module.exports = function(grunt) {
 		},
 
 		watch: {
+			options: {livereload: 9090},
 			main: {
 				files: [ 'Gruntfile.js', 'js/reveal.js', 'css/reveal.css' ],
 				tasks: 'default'
@@ -104,7 +111,10 @@ module.exports = function(grunt) {
 			theme: {
 				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
 				tasks: 'themes'
-			}
+			},
+			html: {
+				files: ['*.html']
+			}// html
 		}
 
 	});
@@ -116,6 +126,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 	grunt.loadNpmTasks( 'grunt-contrib-sass' );
+	grunt.loadNpmTasks( 'grunt-reload');
 	grunt.loadNpmTasks( 'grunt-contrib-connect' );
 	grunt.loadNpmTasks( 'grunt-zip' );
 

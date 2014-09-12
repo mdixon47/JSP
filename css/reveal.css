@@ -219,6 +219,12 @@ body {
 /*********************************************
  * DEFAULT ELEMENT STYLES
  *********************************************/
+/* Case-Sensitivity */
+.no_dot li{
+	list-style-type: none;
+	text-align: center;
+}
+
 
 /* Fixes issue in Chrome where italic fonts did not appear when printing to PDF */
 .reveal:after {
