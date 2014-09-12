@@ -1,7 +1,6 @@
 /* global module:false */
 module.exports = function(grunt) {
 	var port = grunt.option('port') || 8000;
-
 	// Project configuration
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -14,13 +13,6 @@ module.exports = function(grunt) {
 				' *\n' +
 				' * Copyright (C) 2014 Hakim El Hattab, http://hakim.se\n' +
 				' */'
-		},
-		reload:{
-			port: 9090,
-			proxy: {
-				host: "localhost"
-			}
-
 		},
 
 		qunit: {
@@ -105,7 +97,6 @@ module.exports = function(grunt) {
 		},
 
 		watch: {
-			options: {livereload: 9090},
 			main: {
 				files: [ 'Gruntfile.js', 'js/reveal.js', 'css/reveal.css' ],
 				tasks: 'default'
@@ -113,10 +104,7 @@ module.exports = function(grunt) {
 			theme: {
 				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
 				tasks: 'themes'
-			},
-			html: {
-				files: ['*.html']
-			}//html
+			}
 		}
 
 	});
@@ -129,7 +117,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 	grunt.loadNpmTasks( 'grunt-contrib-sass' );
 	grunt.loadNpmTasks( 'grunt-contrib-connect' );
-	grunt.loadNpmTasks ('grunt-reload');
 	grunt.loadNpmTasks( 'grunt-zip' );
 
 	// Default task
