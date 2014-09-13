@@ -42,13 +42,21 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+				
 				<section>
-					<h1>JavaScript Presentation Part 1</h1>
+					<h1>JavaScript Presentation</h1>
 					<h3>JavaScript Basics</h3>
 					<p>
 						<small>Presented by <a href="http://hakim.se">Malik Dixon</a> / <a href="http://twitter.com/hakimel">@mdixon2009</a></small>
 					</p>
 				</section>
+
+				<section>
+					<h3>JavaScript Books</h3>
+					<p>Copy this link for access to Ebooks</p>
+					<a href="http:bit.ly/1uMgERy">http:bit.ly/1uMgERy</a>
+				</section>
+
 
 				<section>
 					<h2>What is JavaScript</h2>
@@ -195,13 +203,13 @@
 				<section>
 					<h2>Identifiers</h2>
 						<p>Indenifier is the name of a variable, function, property, or function argument</p>
-						<p>Indenifiers may one or more charaters of the following format:</p>
+						<p>Indenifiers could be one or more charaters of the following format:</p>
 						<ul>
 							<li>The first charater must ba a letter or an underscore ( _ ), or dollar sigh ($)</li>
 							<li>All other characters may be letters, underscoress, dollar signs, or numbers</li>
 						</ul>
 							
-						<p>JavaScript identifiers use camel case</p>
+						<p>JavaScript identifiers use camel casing</p>
 
 						<pre><code data-trim contenteditable>
 firstSecond
@@ -271,7 +279,8 @@ if (test){
 
 				<section>
 					<h2>Control Statements</h2>
-					<p>Control Statements, such as <code>(if)</code> require code blocks only when execution multiple statements</p>
+					<p>Control Statements, such as <code>(if)</code> require code blocks only when executing
+					 multiple statements</p>
 					<pre><code data-trim contenteditable>
 if (test)
   alert(test);   //valid but error-prone and should be avoided
@@ -358,42 +367,678 @@ var lost = false;
 				</section>
 
 				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://lab.hakim.se/meny/" target="_blank">
-						<img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
-					</a>
+					<h2>Number</h2>
+					<p>JavaScript numbers are 64-bit floating point numbers</p>
+					<p>Example: Addition and concatenation</p>
+					<pre><code data-trim contenteditable>
+var foo = 5,
+    bar = 5;
+
+console.log(foo + bar);  //10
+					</code></pre>
+					<pre><code data-trim contenteditable>
+var foo = "5",
+    bar = "5";
+
+console.log(foo + bar);  //55
+					</code></pre>
+					<p>The most basic number number literal formation is that of a decimal interger which can be directly as shown below.</p>
+					<pre><code data-trim contenteditable>
+var intNum = 55;  //interger
+					</code></pre>
+
 				</section>
 
 				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-					<script>
-						document.getElementById('slideshare').attributeName = 'allowfullscreen';
-					</script>
+					<h3>Number-Continued</h3>
+					<p>Intergers can also be represented as either octal (base 8) or hexadecimal (base 16). For an
+					octal literal, the first digit must be a zero (0) followed by a sequence of octal digits (numbers 0
+					through 7). If a number out of this range is detected in the literal, then the leading zero is ignored
+					and the number is treated as a decimal, as in the following examples:</p>
+					
+					<pre><code data-trim contenteditable>
+var octalNum1 = 070; //octal for 56
+var octalNum2 = 079; //invalid octal - interpreted as 79
+var octalNum3 = 08;  //invalid octal - interpreted as 8
+					</code></pre>
+					<p>To create a hexadecimal literal, you must make the first two characters 0x (case insensitive),
+						followed by any number of hexadecimal digits (0 through 9, and A through F).</p>
+					<pre><code data-trim contenteditable>
+var hexNum1 = 0xA; 	//hexadecimal for 10
+var hexNum2 = 0x1f; 	//hexedecimal for 31
+					</code></pre>
+
 				</section>
 
 				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-						during a presentation.
-					</p>
+					<h3>Not a Number (NAN)</h3>
+					<p>Not-a-number or NaN is a special value that is returned by JavaScript with math functions fail, or when a function trying to parce a number fails. Strings with text in them that fail when parsed as a number (like isNaN("foo")) will return NaN.</p>
+					<p>Examples</p>
+					<pre><code data-trim contenteditable>
+var foo = "55" // could be "abc"
+					</code></pre>
+					<pre><code data-trim contenteditable>
+var myNumber = Number(foo);   //Make it a number
+
+if (isNaN(myNumber)){
+   console.log("It's not a number!");
+}
+
+//double negative - if NOT NOT a number
+if (!isNaN(myNumber)) {
+   console.log ("It IS a number")
+}
+				</code></pre>
+					
 				</section>
 
 				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li><a href="http://slid.es">Try the online editor</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
+					<h2>String</h2>
+					<p>Strings hold all possigle string values.</p>
+					<pre><code data-trim contenteditable>
+"Hello, World!"
+"1,2,3,4,5"
+"!@#$%^&*()_+"
+					</code></pre>
+					<p>Strings can be delineated by either double quotes ( “ ) or single quotes ( ‘ ), so both of the following are legal:</p>
+					<pre><code data-trim contenteditable>
+var firstName = “Nicholas”;
+var lastName = ‘Zakas’;
+					</code></pre>
+					<p>Proper use of Single Quotes and Double Quotes</p>
+					<pre><code data-trim contenteditable>
+var phrase = 'Don't mix your quotes.';  // incorrect 
+var phrase = "Don't mix your quotes.";  // correct
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Object</h2>
+					<p>Objects are created by using the new operator followed by the name of the object type to create. Almost "everthing" in JavaScript are treated as objects. Developers create their own objects by creating instances of the Object type and adding properties and/or methods to it, as shown here:</p>
+					<pre><code data-trim contenteditable>
+var o = new Object();
+					</code></pre>
+					<p>Each Object instance has the following properties and methods:</p>
+					<ul class="small_letters">
+						<li>constructor — The function that was used to create the object.</li>
+						<li>hasOwnProperty(propertyName) — Indicates if the given property exists on the object
+                            instance. The property name must be specified as a string.</li>
+						<li>isPrototypeOf(object) — Determines if the object is a prototype of another object.</li>
+						<li>propertyIsEnumerable(propertyName) — Indicates if the given property can be
+enumerated using the for-in statement</li>
+						
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Object - Continued</h3>
+					<ul class="small_letters">
+					<li>propertyIsEnumerable(propertyName) — Indicates if the given property can be
+enumerated using the for-in statement. As with
+hasOwnProperty(), the property name must be a string.</li>
+					<li>toLocaleString() — Returns a string representation of the object that is appropriate for
+the locale of execution environment.</li>
+					<li>toString() — Returns a string representation of the object.</li>
+					<li>valueOf() — Returns a string, number, or Boolean equivalent of the object. It often
+returns the same value as toString().</li>
 					</ul>
 				</section>
 
 				<section>
-					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
+					<h3>Object Examples</h3>
+					<p>The example crates an object called "person" and adds four properties to it</p>
+					<pre><code data-trim contenteditable>
+var person = {firstName: "John" , lastName: "Doe" , age: 50, eyeColor: "blue"};
+					</code></pre>
+					<p>Spaces and line breaks are not important. An object declaration can span multiple lines.</p>
+					<pre><code data-trim contenteditable>
+var person = {
+	firstName: "John", 
+	lastName: "Doe", 
+	age: 50, 
+	eyeColor: "blue"
+};
+					</code></pre>
 				</section>
+
+				<section>
+					<h2>Operators</h2>
+					<p>Operators can be used to manipulate data values. The operators range from mathematical operations (such as addition and subtraction) and bitwise operators to relational operators and equality operator</p>
+				</section>
+
+				<section>
+					<h3>Unary Operators</h3>
+					<p>Operators that work on only one value are called unary operators. They are the simplest operators in JavaScript.</p>
+
+				</section>
+				<section>
+					<h3>Increment/Decrement</h3>
+					<p>The increment and decrement operators are taken directly from C and come in two versions: prefix
+					and postfix.</p>
+					<p>To use a prefix increment, which adds 1 to a numeric value, you place two plus signs (++) in front of a variable like this:</p>
+					<pre><code data-trim contenteditable>
+var age = 29;
+++age;
+					</code></pre>
+					<p>In this example, the prefix increment changes the value of age to 30 (adding 1 to its previous value
+of 29). This is effectively equal to the following:</p>
+					<pre><code data-trim contenteditable>
+var age = 29;
+age = age + 1;
+					</code></pre>
+				</section>
+				
+				<section>
+					<h3>Increment/Decrement Continued</h3>
+					<p>The prefix decrement acts in a similar manner, subtracting 1 from a numeric value. To use a prefix
+					decrement, place two minus signs (--) before a variable, as shown here:</p>
+					<pre><code data-trim contenteditable>
+var age = 29;
+--age;
+					</code></pre>
+					<p>When using either a prefix increment or a prefix decrement, the variable’s value is changed before
+the statement is evaluated. (In computer science, this is usually referred to as having a side effect.)
+Consider the following:</p>
+					<pre><code data-trim contenteditable>
+var age = 29;
+var anotherAge = --age + 2;
+
+alert (age);   	//output 28
+alert (anotherAge); 	//outputs 30
+					</code></pre>
+				</section>
+
+
+				<section>
+					<h2>Boolean Operators</h2>
+					<p>Almost as important as equality operators, Boolean operators are what make a programming
+					language function. Without the capability to test relationships between two values, statements such
+					as if...else and loops wouldn’t be useful. There are three Boolean operators: NOT, AND, and OR.</p>
+					<h3>Logical NOT</h3>
+					<p>The logical NOT operator is represented by an exclamation point (!) and may be applied to any
+						value in JavaScript</p>
+					<p>The following example illustrates this behavior</p>
+					<pre><code data-trim contenteditable>
+alert(!false); //true
+alert(!”blue”); //false
+alert(!0); //true
+alert(!NaN); //true
+alert(!””); //true
+alert(!12345); //false
+					</code></pre>
+				</section>
+				<section>
+					<h3>Logical AND</h3>
+					<p>The logical AND operator is represented by the double ampersand (&&) and is applied to two values,
+						such as in this example:</p>
+					<pre><code data-trim contenteditable>
+var result = true && false;
+					</code></pre>
+					<h3>Logical OR</h3>
+					<p>The logical OR operator is represented by the double pipe (||) in ECMAScript, like this:</p>
+					<pre><code data-trim contenteditable>
+var result = true || false;
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Conditional Operator</h2>
+					<p>The conditional operator is one of the most versatile in JavaScript, and it takes on the same form
+						as in Java, which is as follows:</p>
+					<pre><code data-trim contenteditable>
+variable = boolean_expression ? true_value : false_value;
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h2>Comparision Operator</h2>
+					<p>Comparison operators compare two values and return either true or false based
+						on how they compare.</p>
+					<h3>Equal (==)</h3>
+					<p>Equal returns true if both values are equal. If the values being compared are not of
+the same type, JavaScript first converts them and then applies a strict comparison.</p>
+					<pre><code data-trim contenteditable>
+1 == 1 // returns true
+"1" == 1 // returns true ("1" converts to 1)
+1 == true // returns true
+0 == false // returns true
+"" == 0 // returns true ("" converts to 0)
+" " == 0 // returns true (" " converts to 0)
+0 == 1 // returns false
+1 == false // returns false
+0 == true // returns false
+var x, y; // declare x and y
+x = {}; // create an object and assign it to x
+y = x; // point y to x
+x == y; // returns true (refers to same object in memory)
+x == {}; // returns false (not the same object)
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Not Equal (!=)</h3>
+					<p>This is the same as equal, but it works in reverse: true is returned if the values are
+not equal. The same conversions described above apply here as well:</p>
+<pre><code data-trim contenteditable>
+1 != 1 // returns false
+"1" != 1 // returns false ("1" converts to 1)
+1 != true // returns false
+					</code></pre>
+
+					</section>
+
+					<section>
+					<h3>Strict Equal (===)</h3>
+					<p>A strict equal comparison performs no conversion of types. Where "" == 0 would
+					return true for a regular equal comparison, "" === 0 would not, since an empty
+					string does not equal zero:</p>
+					<pre><code data-trim contenteditable>
+1 === 1 // returns true
+"1" === 1 // returns false ("1" is not converted)
+1 === true // returns false
+0 === false // returns false
+"" === 0 // returns false ("" is not converted)
+" " === 0 // returns false (" " is not converted)
+0 === 1 // returns false
+1 === false // returns false
+0 === true // returns false
+var x, y; // declare x and y
+x = {}; // create an object and assign it to x
+y = x; // point y to x
+x === y; // returns true (refers to same object in memory)
+x === {}; // returns false (not the same object)
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Strict Not Equal (!==)</h3>
+					<p>Strict not equal is the samle as strict equal except that it works in reverse. It returns
+true if the values are not equal. Again, no conversions are performed prior to
+comparison:</p>
+<pre><code data-trim contenteditable>
+1 !== 1 // returns false
+"1" !== 1 // returns true ("1" is not converted)
+1 !== true // returns true
+0 !== false // returns true
+"" !== 0 // returns true ("" is not converted)
+" " !== 0 // returns true (" " is not converted)
+0 !== 1 // returns true
+1 !== false // returns true
+0 !== true // returns true
+var x, y; // declare x and y
+x = {}; // create an object and assign it to x
+y = x; // point y to x
+x !== y; // returns false (refers to same object in memory)
+x !== {}; // returns true (not the same object)
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Greater than (>)</h3>
+					<p>Greater than returns true if the value on the left of the operator is greater than the
+value on the right. Note that type conversion implicitly occurs before comparison:</p>
+					<pre><code data-trim contenteditable>
+0 > 1 // returns false
+1 > 1 // returns false
+2 > 1 // returns true
+2 > "" // returns true ("" converts to 0)
+					</code></pre>
+					<h3>Greater than or Equal to (>=)</h3>
+					<p>This returns true if the value on the left is greater than or equal to the one on the
+					right. Note that type conversion implicitly occurs before comparison:</p>
+					<pre><code data-trim contenteditable>
+0 >= 1 // returns false
+1 >= 1 // returns true
+"1" >= 1 // returns true ("1" converts to 1)
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Less than (<)</h3>
+					<p>
+						This returns true if the value on the left of the operator is less than the value on
+						the right. Note that type conversion implicitly occurs before comparison:
+					</p>
+					<pre><code data-trim contenteditable>
+0 < 1 // returns true
+1 < 1 // returns false
+2 < 1 // returns false
+2 < "" // returns false ("" converts to 0)
+					</code></pre>
+					<h3>Less than or Equal to (<=)</h3>
+					<p>This returns true if the value on the left of the operator is less than or equal to the
+value on the right. Note that type conversion implicitly occurs before comparison:</p>
+					<pre><code data-trim contenteditable>
+0 <= 1 // returns true
+1 <= 1 // returns true
+"1" <= 1 // returns true ("1" converts to 1)
+2 <= 1 // returns false
+"2" <= 1 // returns false ("2" converts to 2)
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Statements</h2>
+					<p>One of the most frequently used statements in most programming languages is the if statement.
+						The if statement has the following syntax:</p>
+					<pre><code data-trim contenteditable>
+if (condition) statement1 else statement2
+					</code></pre>
+					<p>Each of the statements can be either a single line or a code block (a group of code lines enclosed within braces). Consider this example:</p>
+					<pre><code data-trim contenteditable>
+if (i > 25)
+   alert(“Greater than 25.”); 	//one-line statement
+else {
+   alert(“Less than or equal to 25.”); //block statement
+}
+					</code></pre>
+					<p>It’s considered best coding practice to always use block statements, even if only one line of code is to
+						be executed. Doing so can avoid confusion about what should be executed for each condition.</p>
+				</section>
+
+				<section>
+					<h3>The do-while Statement</h3>
+					<p>The do-while statement is a post-test loop, meaning that the escape condition is evaluated only
+after the code inside the loop has been executed. The body of the loop is always executed at least
+once before the expression is evaluated. Here’s the syntax:</p>
+					<pre><code data-trim contenteditable>
+var i = 0;
+do {
+  i += 2;
+} while (i < 10);
+					</code></pre>
+					<h3>The while Statement</h3>
+					<p>The while statement is a pretest loop. This means the escape condition is evaluated before the code
+inside the loop has been executed. Because of this, it is possible that the body of the loop is never
+executed. Here’s the syntax:</p>
+					<pre><code data-trim contenteditable>
+while(expression) statement
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>The while Statement - continued</h3>
+					<p>Here’s an example of its usage:</p>
+					<pre><code data-trim contenteditable>
+var i = 0;
+ while (i < 10) {
+  i += 2;
+}
+					</code></pre>
+					<h3>The for Statement</h3>
+					<p>The for statement is also a pretest loop with the added capabilities of variable initialization before
+entering the loop and defining postloop code to be executed. Here’s the syntax:</p>
+<pre><code data-trim contenteditable>
+for (initialization; expression; post-loop-expression) statement
+					</code></pre>
+				</section>
+			
+				<section>
+				<h3>The For Statement - continued</h3>
+				<p>If the body is executed, the postloop expression is also executed, iterating
+the variable i. This for loop is the same as the following:</p>
+				<pre><code data-trim contenteditable>
+var count = 10;
+var i = 0;
+   while (i < count){
+   alert(i);
+   i++;
+}
+					</code></pre>
+					<p>It’s important to note that there’s no need to use the var keyword inside the for loop initialization.
+It can be done outside the initialization as well, such as the following:</p>
+<pre><code data-trim contenteditable>
+var count = 10;
+var i;
+for (i=0; i < count; i++){
+  alert(i);
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>The for-in Statement</h3>
+					<p>The for-in statement is a strict iterative statement. It is used to enumerate the properties of an
+					object. Here’s the syntax:</p>
+					<pre><code data-trim contenteditable>
+for (property in expression) statement
+					</code></pre>
+					<p>Here is an example of its usage:</p>
+					<pre><code data-trim contenteditable>
+for (var propName in window) {
+document.write(propName);
+}
+					</code></pre>
+				</section>
+
+					<section>
+						<h3>The break and continue Statements</h3>
+						<p>The break and continue statements provide stricter control over the execution of code in a loop. The
+break statement exits the loop immediately, forcing execution to continue with the next statement
+after the loop. The continue statement, on the other hand, exits the loop immediately, but
+execution continues from the top of the loop. Here’s an example:</p>
+						<pre><code data-trim contenteditable>
+var num = 0;
+	for (var i=1; i < 10; i++) {
+		if (i % 5 == 0) {
+	break;
+	}
+	num++;
+	}
+	alert(num); //4
+}
+					</code></pre>
+					</section>
+					
+
+					<section>
+						<h3>The break and continue Statements - continued</h3>
+						<p>In the previous code, the for loop increments the variable i from 1 to 10. In the body of loop, an if
+statement checks to see if the value of i is evenly divisible by 5 (using the modulus operator). If so,
+the break statement is executed and the loop is exited. The num variable starts out at 0 and indicates the number of times the loop has been executed</p>
+						<p>A different effect can be seen if break is replaced with continue like this:</p>
+						<pre><code data-trim contenteditable>
+var num = 0;
+	for (var i=1; i < 10; i++) {
+		if (i % 5 == 0) {
+		continue;
+	}
+	num++;
+}
+alert(num); //8
+					</code></pre>
+					<p>Here, the alert displays 8, the number of times the loop has been executed. When i reaches a value
+of 5, the loop is exited before num is incremented, but execution continues with the next iteration,
+when the value is 6. The loop then continues until its natural completion, when i is 10.</p>
+					</section>
+
+					<section>
+						<h3>The switch Statement</h3>
+						<p>Closely related to the if statement is the switch statement, another flow-control statement adopted
+						from other languages. The syntax for the switch statement in JavaScript closely resembles the
+						syntax in other C-based languages, as you can see here:</p>
+						<pre><code data-trim contenteditable>
+switch (expression) {
+	case value: statement
+	break;
+	case value: statement
+	break;
+	case value: statement
+	break;
+	case value: statement
+	break;
+default: statement
+}
+					</code></pre>
+					</section>
+
+					<section>
+						<h3>The switch Statement - continued</h3>
+						<p>In this example, a string value is used in a switch statement. The first case is actually an expression that evaluates a string concatenation. Because the result of this concatenation is equal to the switch argument, the alert displays “Greeting was found.” The ability to have case expressions also
+						allows you to do things like this:</p>
+						<pre><code data-trim contenteditable>
+var num = 25;
+	switch (true) {
+  case num < 0:
+		alert(“Less than 0.”);
+	break;
+  case num >= 0 && num <= 10:
+		alert(“Between 0 and 10.”);
+		break;
+  case num > 10 && num <= 20:
+		alert(“Between 10 and 20.”);
+	break;
+default:
+alert(“More than 20.”);
+}
+					</code></pre>
+
+					</section>
+
+					<section>
+						<h2>FUNCTIONS</h2>
+						<p>Functions are the core of any language, because they allow the encapsulation of statements that
+						can be run anywhere and at any time. Functions in JavaScript are declared using the function keyword, followed by a set of arguments and then the body of the function. The basic syntax is as follows:</p>
+						<pre><code data-trim contenteditable>
+function functionName(arg0, arg1,...,argN) {
+statements
+}
+					</code></pre>
+					<p>This is an example of a function:</p>
+					<pre><code data-trim contenteditable>
+function sayHi(name, message) {
+	alert(“Hello “ + name + “, “ + message);
+}
+					</code></pre>
+					</section>
+
+					<section>
+						<h3>Functions - continued</h3>
+						<p>This function can then be called by using the function name, followed by the function arguments
+						enclosed in parentheses (and separated by commas, if there are multiple arguments). The code to
+						call the sayHi() function looks like this:</p>
+						<pre><code data-trim contenteditable>
+sayHi(“Nicholas”, “how are you today?”);
+						</code></pre>
+						<p>The output of this function call is, “Hello Nicholas, how are you today?” The named
+						arguments name and message are used as part of a string concatenation that is ultimately displayed
+						in an alert.</p>
+					</section>
+
+					<section>
+						<h3>Scope</h3>
+						<p>Not only are functions containers for groups of operations, they also create a scope
+						or variables. Variables exist either in the global scope (not declared within a function
+						and available everywhere) or local scope (declared within a function and only
+						available within it). No code outside the function can access a variable declared
+						within it. Only code inside the function can access it. Nested function declarations
+						that are declared at the same level or lower than the variable can also access it. So,
+						for example:</p>
+						<pre><code data-trim contenteditable>
+function hi() {
+  var hello = "hello"
+};
+
+hi();
+alert(hello);
+
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Scope - continued</h3>
+						<p>any function declared within another function automatically has access
+						to variables declared within its parent function:</p>
+						<pre><code data-trim contenteditable>
+function fullName() {
+	var firstName = "Hugo";
+	function alertFullName() {
+	  var lastName = "Reyes";
+	  alert("Full name: " + firstName + " " + lastName);
+	}
+	alertFullName();
+}
+
+fullName();
+
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Arrays</h2>
+						<p>The JavaScript Array global object is a constructor for arrays, which are high-level, list-like objects. Arrays are list-like objects whose prototype has methods to perform traversal and mutation operations. Neither the length of a JavaScript array nor the types of its elements are fixed. Since an array's size length grow or shrink at any time, JavaScript arrays are not guaranteed to be dense. In general, these are convenient characteristics; but if these features are not desirable for your particular use, you might consider using typed arrays.</p>
+						<p>Creating an array in two ways:</p>
+						<pre><code data-trim contenteditable>
+var myArray = new Array();
+
+						</code></pre>
+						<p>or</p>
+						<pre><code data-trim contenteditable>
+var myArray = [];
+
+						</code></pre>
+
+
+					</section>
+
+					<section>
+						<h3>Arrays - Continued</h3>
+						<p>The [] notation is called an array literal, and it represents an empty array. It’s less
+						verbose and safer to use than the new Array() syntax, because the Array constructor
+						can be overwritten and potentially replaced with malicious code; for example, a
+						function that masquerades as an array but sends any data you place in it to a third-party server on the Internet. Using the array literal, you can easily create a new array
+						containing values such as the following:</p>
+						<pre><code data-trim contenteditable>
+var myArray = [4, 8, 15, 16, 23, 42];
+						</code></pre>
+						<p>An array isn’t limited to numbers, though. You can also create an array with strings
+						in it:</p>
+						<pre><code data-trim contenteditable>
+var fruit = ["apple", "orange", "pear", "grapes"];
+						</code></pre>
+
+
+					</section>
+
+					<section>
+						<h3>Reading from an Array</h3>
+						<p>Reading from an array is fairly straightforward. All you need to do is point to the
+							item you want by its index number and the array will return it to you, like so:</p>
+						<pre><code data-trim contenteditable>
+var myValue,
+myArray = ["Hello", "World", "I", "am", "an", "array"];
+myValue = myArray[4]; // returns "an"
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>JavaScript Libries</h2>
+						<p>JavaScript libraries help to bridge the gap between browser differences and provide easier access
+						to complex browser features. Libraries come in two forms: general and specialty. General
+						JavaScript libraries provide access to common browser functionality and can be used as the basis
+						for a web site or web application. Specialty libraries do only specific things and are intended
+						to be used for only parts of a web site or web application.</p>
+						<ul>
+							<li>Yahoo (YUI) Library</li>
+							<li>Prototype</li>
+							<li>The Dojo Toolkit</li>
+							<li>Mootools</li>
+							<li>JQuery</li>
+							<li>Mochikit</li>
+							<li>Underscore.js</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>JQuery</h2>
+						<p>jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.</p>
+					</section>
+
+					<section>
+						
+					</section>
+
 
 			</div>
 

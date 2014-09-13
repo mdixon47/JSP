@@ -224,6 +224,9 @@ body {
 	list-style-type: none;
 	text-align: center;
 }
+.small_letters li{
+	font-size: 25px
+}
 
 
 /* Fixes issue in Chrome where italic fonts did not appear when printing to PDF */
@@ -292,6 +295,7 @@ body {
 }
 
 .reveal p {
+	font-size: .85em;
 	margin-bottom: 10px;
 	line-height: 1.2em;
 }
